@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/plugins/cloud_oclusion_report" >
+        <file>icon.png</file>
+    </qresource>
+</RCC>

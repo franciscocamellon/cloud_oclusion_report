@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CloudOclusionReportDialogBase</class>
+ <widget class="QDialog" name="CloudOclusionReportDialogBase">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>394</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Cloud Oclusion Report</string>
+  </property>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>361</width>
+     <height>181</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Relatório</string>
+   </property>
+   <widget class="QLineEdit" name="finish_date_le">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>110</y>
+      <width>71</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>12/06/2023</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="report_date_le">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>110</y>
+      <width>71</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>12/06/2023</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>110</y>
+      <width>61</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Finalização</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>110</y>
+      <width>41</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Início</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="report_number_le">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>70</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>01/2023</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>70</y>
+      <width>111</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Número (Número/Ano)</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="year_cb">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>150</y>
+      <width>69</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>2023</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2034</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2025</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2026</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2027</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2028</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2029</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2030</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>150</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Período de trabalho</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="month_cb">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>150</y>
+      <width>69</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Janeiro</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Fevereiro</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Março</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Abril</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Maio</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Junho</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Julho</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Agosto</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Setembro</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Outubro</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Novembro</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Dezembro</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="block_cb">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>30</y>
+      <width>69</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Bloco A</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Bloco B</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Bloco C</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Bloco D</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Bloco E</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Bloco F</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="om_cb">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>30</y>
+      <width>81</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>1º CGEO</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2º CGEO</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>3º CGEO</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>4º CGEO</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>5º CGEO</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>30</y>
+      <width>81</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Bloco de vôo</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Organização Militar</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>200</y>
+     <width>361</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Avaliador</string>
+   </property>
+   <widget class="QLineEdit" name="evaluator_name_le">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>30</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>51</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PST/GRAD</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="evaluator_pst_grd_cb">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>30</y>
+      <width>69</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Maj</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Cap</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1° Ten</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2° Ten</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>STen</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1° Sgt</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2° Sgt</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>3° Sgt</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>30</y>
+      <width>31</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Nome</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_3">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>270</y>
+     <width>361</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Responsável técnico</string>
+   </property>
+   <widget class="QLineEdit" name="manager_le">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>30</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="manager_pst_grd_cb">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>30</y>
+      <width>69</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Maj</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Cap</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1° Ten</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2° Ten</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>STen</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1° Sgt</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2° Sgt</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>3° Sgt</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>30</y>
+      <width>31</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Nome</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>51</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PST/GRAD</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>350</y>
+     <width>291</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QPushButton" name="evaluate_bt">
+      <property name="text">
+       <string>Analisar feições</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="ok_bt">
+      <property name="text">
+       <string>Gerar relatório</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="cancel_bt">
+      <property name="text">
+       <string>Cancel</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
