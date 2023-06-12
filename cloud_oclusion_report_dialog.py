@@ -44,7 +44,7 @@ class CloudOclusionReportDialog(QtWidgets.QDialog, FORM_CLASS):
         # http://qt-project.org/doc/qt-4.8/designer-using-a-ui-file.html
         # #widgets-and-dialogs-with-auto-connect
         self.setupUi(self)
-        self.evaluate_bt.clicked.connect(self.get_oclusion_result)
+        self.evaluate_bt.clicked.connect(self.get_occlusion_result)
         self.ok_bt.clicked.connect(self.get_input_data)
 
     # self.aglomerateList = [om, numero_relatorio, bloco, periodo_mes, periodo_ano, endingDate, conformity,
@@ -60,60 +60,58 @@ class CloudOclusionReportDialog(QtWidgets.QDialog, FORM_CLASS):
         # for layer in QgsProject.instance().mapLayers().values():
         return layer.name()
 
-    def filter_by_oclusion(self):
-        #analisysDict[texto_edicao].append(area_oclusao)
+    def filter_by_occlusion(self):
         nonconforming = []
         conforming = []
-        analisysDict = dict()
+        analysis_dict = {}
 
-        for feature in QgsProject.instance().mapLayersByName('edicao_area_sem_dados_a')[0].getFeatures():
+        edicao_layer = QgsProject.instance().mapLayersByName('edicao_area_sem_dados_a')[0]
+        for feature in edicao_layer.getFeatures():
             texto_edicao = feature['texto_edicao']
             area_oclusao = feature['area_oclusao']
-            try:
-                analisysDict[texto_edicao].append(area_oclusao)
-            except:
-                analisysDict[texto_edicao] = [area_oclusao]
+            if texto_edicao in analysis_dict:
+                analysis_dict[texto_edicao].append(area_oclusao)
+            else:
+                analysis_dict[texto_edicao] = [area_oclusao]
 
-        for key in analisysDict:
-            if max(analisysDict[key]) >= 0.2:
+        for key in analysis_dict:
+            if max(analysis_dict[key]) >= 0.2:
                 nonconforming.append(key)
             else:
                 conforming.append(key)
 
-        # # GERAR RESULTADO
-        #
-        # if bloco in blockFail:
-        #     analisysAnswer = 'Foram identificadas nuvens ou oclusões com área maior ou igual a 0,2 km².'
-        #     conformity = 'Não Conforme'
-        # else:
-        #     analisysAnswer = 'Não foram identificadas nuvens ou oclusões com área maior ou igual a 0,2 km².'
-        #     conformity = 'Conforme'
-        #
-        # self.aglomerateList = [om, numero_relatorio, bloco, periodo_mes, periodo_ano, endingDate, conformity,
-        #                        analisysAnswer, nome_avaliador, nome_responsavel_tecnico, doc_date]
-
-        print(analisysDict)
-        print(conforming, nonconforming)
         return conforming, nonconforming
 
-    def get_oclusion_result(self):
+    def get_occlusion_result(self):
+        conforming, nonconforming = self.filter_by_occlusion()
+        block_text = self.block_cb.currentText()
 
-        conforming, nonconforming = self.filter_by_oclusion()
-
-        if self.block_cb.currentText() in nonconforming:
-            analisysAnswer = 'Foram identificadas nuvens ou oclusões com área maior ou igual a 0,2 km².'
+        if block_text in nonconforming:
+            analysis_answer = 'Foram identificadas nuvens ou oclusões com área maior ou igual a 0,2 km².'
             conformity = 'Não Conforme'
         else:
-            analisysAnswer = 'Não foram identificadas nuvens ou oclusões com área maior ou igual a 0,2 km².'
+            analysis_answer = 'Não foram identificadas nuvens ou oclusões com área maior ou igual a 0,2 km².'
             conformity = 'Conforme'
 
-        return analisysAnswer, conformity
+        return analysis_answer, conformity
 
     def get_input_data(self):
+        analysis_answer, conformity = self.get_occlusion_result()
 
-        analisysAnswer, conformity = self.get_oclusion_result()
+        input_data = [
+            self.om_cb.currentText(),
+            self.report_number_le.text(),
+            self.block_cb.currentText(),
+            self.month_cb.currentText(),
+            self.year_cb.currentText(),
+            self.finish_date_le.text(),
+            conformity,
+            analysis_answer,
+            '{} {}'.format(self.evaluator_pst_grd_cb.currentText(), self.evaluator_name_le.text()),
+            '{} {}'.format(self.manager_pst_grd_cb.currentText(), self.manager_le.text()),
+            self.report_date_le.text()
+        ]
 
-        print([self.om_cb.currentText(),self.report_number_le.text(),self.block_cb.currentText(),self.month_cb.currentText(),self.year_cb.currentText(),self.finish_date_le.text(),
-        conformity, analisysAnswer, self.evaluator_name_le.text(), self.manager_le.text(), self.report_date_le.text()])
-        return [self.om_cb.currentText(),self.report_number_le.text(),self.block_cb.currentText(),self.month_cb.currentText(),self.year_cb.currentText(),self.finish_date_le.text(),
-        conformity, analisysAnswer, self.evaluator_name_le.text(), self.manager_le.text(), self.report_date_le.text()]
+        print(input_data)
+        return input_data
+
