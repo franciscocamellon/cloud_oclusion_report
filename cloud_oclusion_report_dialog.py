@@ -47,10 +47,6 @@ class CloudOclusionReportDialog(QtWidgets.QDialog, FORM_CLASS):
         self.evaluate_bt.clicked.connect(self.get_occlusion_result)
         self.ok_bt.clicked.connect(self.get_input_data)
 
-    # self.aglomerateList = [om, numero_relatorio, bloco, periodo_mes, periodo_ano, endingDate, conformity,
-    #                        analisysAnswer, nome_avaliador, nome_responsavel_tecnico, doc_date]
-    # QgsProject.instance().mapLayersByName('edicao_area_sem_dados_a')[0]
-
     def get_data(self):
         teste = self.om_cb.currentText()
         print(teste)
@@ -92,7 +88,7 @@ class CloudOclusionReportDialog(QtWidgets.QDialog, FORM_CLASS):
         else:
             analysis_answer = 'Não foram identificadas nuvens ou oclusões com área maior ou igual a 0,2 km².'
             conformity = 'Conforme'
-
+        print(analysis_answer, conformity)
         return analysis_answer, conformity
 
     def get_input_data(self):
