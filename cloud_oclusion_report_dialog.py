@@ -27,6 +27,7 @@ import os
 from qgis.core import QgsProject, QgsMapLayerProxyModel
 from qgis.PyQt import uic
 from qgis.PyQt import QtWidgets
+from qgis.PyQt.QtCore import QDateTime
 
 # This loads your .ui file so that PyQt can populate your plugin with the elements from Qt Designer
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
@@ -44,8 +45,13 @@ class CloudOclusionReportDialog(QtWidgets.QDialog, FORM_CLASS):
         # http://qt-project.org/doc/qt-4.8/designer-using-a-ui-file.html
         # #widgets-and-dialogs-with-auto-connect
         self.setupUi(self)
+        self.connect_layer_to_field_combo_box()
+        self.report_date_de.setDateTime(QDateTime.currentDateTime())
+        self.evaluate_end_date_de.setDateTime(QDateTime.currentDateTime())
+        self.evaluation_layer_cb.setFilters(QgsMapLayerProxyModel.PolygonLayer)
         self.evaluate_bt.clicked.connect(self.get_occlusion_result)
-        self.ok_bt.clicked.connect(self.get_input_data)
+        self.report_bt.clicked.connect(self.get_input_data)
+        self.evaluation_layer_cb.layerChanged.connect(self.connect_layer_to_field_combo_box)
 
     def get_data(self):
         teste = self.om_cb.currentText()
@@ -55,6 +61,12 @@ class CloudOclusionReportDialog(QtWidgets.QDialog, FORM_CLASS):
     def get_layer_name(self, layer):
         # for layer in QgsProject.instance().mapLayers().values():
         return layer.name()
+
+    def connect_layer_to_field_combo_box(self):
+        current_layer = self.evaluation_layer_cb.currentLayer()
+        self.evaluation_field_cb.setLayer(current_layer)
+        # fields_list = [field.name() for field in current_layer.fields()]
+        # self.evaluation_field_cb.setFields(fields_list)
 
     def filter_by_occlusion(self):
         nonconforming = []
@@ -96,16 +108,16 @@ class CloudOclusionReportDialog(QtWidgets.QDialog, FORM_CLASS):
 
         input_data = [
             self.om_cb.currentText(),
-            self.report_number_le.text(),
+            self.report_number_sp.text(),
             self.block_cb.currentText(),
-            self.month_cb.currentText(),
-            self.year_cb.currentText(),
-            self.finish_date_le.text(),
+            self.work_period_month_cb.currentText(),
+            self.work_period_year_cb.currentText(),
+            self.evaluate_end_date_de.text(),
             conformity,
             analysis_answer,
-            '{} {}'.format(self.evaluator_pst_grd_cb.currentText(), self.evaluator_name_le.text()),
-            '{} {}'.format(self.manager_pst_grd_cb.currentText(), self.manager_le.text()),
-            self.report_date_le.text()
+            '{} {}'.format(self.evaluator_grad_cb.currentText(), self.evaluator_name_le.text()),
+            '{} {}'.format(self.manager_pst_cb.currentText(), self.manager_name_le.text()),
+            self.report_date_de.text()
         ]
 
         print(input_data)
