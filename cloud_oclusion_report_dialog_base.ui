@@ -81,7 +81,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QDateEdit" name="dateEdit">
+        <widget class="QDateEdit" name="report_date_de">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -266,7 +266,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QComboBox" name="month_cb">
+        <widget class="QComboBox" name="work_period_month_cb">
          <item>
           <property name="text">
            <string>Janeiro</string>
@@ -346,7 +346,7 @@
         </spacer>
        </item>
        <item>
-        <widget class="QComboBox" name="year_cb">
+        <widget class="QComboBox" name="work_period_year_cb">
          <item>
           <property name="text">
            <string>2023</string>
@@ -426,10 +426,10 @@
         </widget>
        </item>
        <item>
-        <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
+        <widget class="QDoubleSpinBox" name="occlusion_param_sd"/>
        </item>
        <item>
-        <widget class="QComboBox" name="comboBox">
+        <widget class="QComboBox" name="occlusion_param_unit_cb">
          <item>
           <property name="text">
            <string>%</string>
@@ -480,7 +480,7 @@
         </spacer>
        </item>
        <item>
-        <widget class="QgsMapLayerComboBox" name="mMapLayerComboBox">
+        <widget class="QgsMapLayerComboBox" name="evaluation_layer_cb">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -517,7 +517,7 @@
         </spacer>
        </item>
        <item>
-        <widget class="QgsFieldComboBox" name="mFieldComboBox">
+        <widget class="QgsFieldComboBox" name="evaluation_field_cb">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -617,7 +617,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="manager_pst_grd_cb">
+      <widget class="QComboBox" name="manager_pst_cb">
        <item>
         <property name="text">
          <string>Maj</string>
@@ -659,7 +659,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="manager_le"/>
+      <widget class="QLineEdit" name="manager_name_le"/>
      </item>
     </layout>
    </widget>
@@ -682,7 +682,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="ok_bt">
+     <widget class="QPushButton" name="report_bt">
       <property name="text">
        <string>Gerar relatório</string>
       </property>
@@ -727,7 +727,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="evaluator_pst_grd_cb">
+      <widget class="QComboBox" name="evaluator_grad_cb">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
