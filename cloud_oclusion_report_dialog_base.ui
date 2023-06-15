@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>572</height>
+    <width>392</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,380 +16,442 @@
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>10</x>
      <y>10</y>
-     <width>361</width>
-     <height>181</height>
+     <width>371</width>
+     <height>201</height>
     </rect>
    </property>
    <property name="title">
     <string>Relatório</string>
    </property>
-   <widget class="QWidget" name="verticalLayoutWidget_2">
+   <widget class="QWidget" name="layoutWidget_4">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>20</y>
-      <width>341</width>
-      <height>151</height>
+      <width>349</width>
+      <height>29</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
+    <layout class="QHBoxLayout" name="horizontalLayout_7">
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_8">
-       <item>
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>Organização Militar</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QComboBox" name="om_cb">
-         <item>
-          <property name="text">
-           <string>1º CGEO</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>2º CGEO</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>3º CGEO</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>4º CGEO</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>5º CGEO</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_3">
-         <property name="text">
-          <string>Data do relatório</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QDateEdit" name="report_date_de">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="calendarPopup">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>Número do relatório</string>
+       </property>
+      </widget>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_6">
-       <item>
-        <widget class="QLabel" name="label_2">
-         <property name="text">
-          <string>Bloco de vôo</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QComboBox" name="block_cb">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <item>
-          <property name="text">
-           <string>Bloco A</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Bloco B</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Bloco C</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Bloco D</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Bloco E</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Bloco F</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Expanding</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>25</width>
-           <height>25</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
+      <widget class="QSpinBox" name="report_number_sp">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_7">
-       <item>
-        <widget class="QLabel" name="label_6">
-         <property name="text">
-          <string>Número do relatório</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSpinBox" name="report_number_sp">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Fixed</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>30</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_13">
-         <property name="text">
-          <string>Ano</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QComboBox" name="report_year_cb">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <item>
-          <property name="text">
-           <string>2023</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>2034</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>2025</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>2026</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>2027</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>2028</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>2029</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>2030</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-      </layout>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>30</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_9">
+      <widget class="QLabel" name="label_13">
+       <property name="text">
+        <string>Ano</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="report_year_cb">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <item>
-        <widget class="QLabel" name="label_4">
-         <property name="text">
-          <string>Período de trabalho</string>
-         </property>
-        </widget>
+        <property name="text">
+         <string>2023</string>
+        </property>
        </item>
        <item>
-        <widget class="QComboBox" name="work_period_month_cb">
-         <item>
-          <property name="text">
-           <string>Janeiro</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Fevereiro</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Março</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Abril</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Maio</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Junho</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Julho</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Agosto</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Setembro</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Outubro</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Novembro</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Dezembro</string>
-          </property>
-         </item>
-        </widget>
+        <property name="text">
+         <string>2034</string>
+        </property>
        </item>
        <item>
-        <spacer name="horizontalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Fixed</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>15</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
+        <property name="text">
+         <string>2025</string>
+        </property>
        </item>
        <item>
-        <widget class="QComboBox" name="work_period_year_cb">
-         <item>
-          <property name="text">
-           <string>2023</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>2034</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>2025</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>2026</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>2027</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>2028</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>2029</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>2030</string>
-          </property>
-         </item>
-        </widget>
+        <property name="text">
+         <string>2026</string>
+        </property>
        </item>
-      </layout>
+       <item>
+        <property name="text">
+         <string>2027</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2028</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2029</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2030</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>160</y>
+      <width>349</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_12">
+     <item>
+      <widget class="QLabel" name="label_15">
+       <property name="text">
+        <string>Diretório de destino</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>15</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QgsFileWidget" name="pdf_destination_fw">
+       <property name="storageMode">
+        <enum>QgsFileWidget::GetDirectory</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget_5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>125</y>
+      <width>349</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_9">
+     <item>
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Período de trabalho</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="work_period_month_cb">
+       <item>
+        <property name="text">
+         <string>Janeiro</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Fevereiro</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Março</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Abril</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Maio</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Junho</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Julho</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Agosto</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Setembro</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Outubro</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Novembro</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Dezembro</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>15</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QComboBox" name="work_period_year_cb">
+       <item>
+        <property name="text">
+         <string>2023</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2034</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2025</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2026</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2027</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2028</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2029</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2030</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>55</y>
+      <width>349</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_8">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Organização Militar</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="om_cb">
+       <item>
+        <property name="text">
+         <string>1º CGEO</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2º CGEO</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>3º CGEO</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>4º CGEO</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>5º CGEO</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>Data do relatório</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDateEdit" name="report_date_de">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="calendarPopup">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>349</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_6">
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Bloco de vôo</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="block_cb">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <item>
+        <property name="text">
+         <string>Bloco A</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Bloco B</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Bloco C</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Bloco D</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Bloco E</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Bloco F</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Expanding</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>25</width>
+         <height>25</height>
+        </size>
+       </property>
+      </spacer>
      </item>
     </layout>
    </widget>
@@ -397,9 +459,9 @@
   <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>200</y>
-     <width>361</width>
+     <x>10</x>
+     <y>220</y>
+     <width>371</width>
      <height>151</height>
     </rect>
    </property>
@@ -411,7 +473,7 @@
      <rect>
       <x>10</x>
       <y>20</y>
-      <width>341</width>
+      <width>351</width>
       <height>121</height>
      </rect>
     </property>
@@ -590,9 +652,9 @@
   <widget class="QGroupBox" name="groupBox_3">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>440</y>
-     <width>361</width>
+     <x>10</x>
+     <y>460</y>
+     <width>371</width>
      <height>71</height>
     </rect>
    </property>
@@ -604,7 +666,7 @@
      <rect>
       <x>10</x>
       <y>30</y>
-      <width>341</width>
+      <width>351</width>
       <height>31</height>
      </rect>
     </property>
@@ -668,7 +730,7 @@
    <property name="geometry">
     <rect>
      <x>90</x>
-     <y>530</y>
+     <y>550</y>
      <width>291</width>
      <height>31</height>
     </rect>
@@ -700,9 +762,9 @@
   <widget class="QGroupBox" name="groupBox_4">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>360</y>
-     <width>361</width>
+     <x>10</x>
+     <y>380</y>
+     <width>371</width>
      <height>71</height>
     </rect>
    </property>
@@ -714,7 +776,7 @@
      <rect>
       <x>10</x>
       <y>30</y>
-      <width>339</width>
+      <width>351</width>
       <height>31</height>
      </rect>
     </property>
@@ -791,6 +853,11 @@
    <class>QgsFieldComboBox</class>
    <extends>QComboBox</extends>
    <header>qgsfieldcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QgsFileWidget</class>
+   <extends>QWidget</extends>
+   <header>qgsfilewidget.h</header>
   </customwidget>
   <customwidget>
    <class>QgsMapLayerComboBox</class>
