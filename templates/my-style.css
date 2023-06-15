@@ -1,0 +1,9 @@
+table.main-table {
+    border: 1px solid #000000;
+    text-align: center;
+  }
+
+table.main-table td, table.main-table th {
+    border: 1px solid #000000;
+    padding: 3px 4px;
+  }
