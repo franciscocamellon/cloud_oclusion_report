@@ -177,13 +177,14 @@ class CloudOclusionReportDialog(QtWidgets.QDialog, FORM_CLASS):
 
         css_file = os.path.join(os.path.dirname(__file__), 'templates', 'my-style.css')
         config = pdfkit.configuration(wkhtmltopdf="C:/Program Files (x86)/wkhtmltopdf/bin/wkhtmltopdf.exe")
-        pdfkit.from_string(output_text, fileName, configuration=config, css=css_file)
-        self.pdf_destination_fw
+        # pdfkit.from_string(output_text, fileName, configuration=config, css=css_file)
+        self.convert_text_to_pdf(output_text, fileName, configuration=config, css=css_file)
+
         print('PDF Gerado com sucesso')
 
-    def convert_text_to_pdf(self, output_text, destination_path, configuration=None, css=None):
+    def convert_text_to_pdf(self, output_text, file_name, configuration=None, css=None):
         try:
-            file_name = os.path.join(destination_path, "output.pdf")
+            file_name = os.path.join(self.pdf_destination_fw.filePath(), file_name)
             pdfkit.from_string(output_text, file_name, configuration=configuration, css=css)
             print(f"PDF created successfully at {file_name}.")
         except Exception as e:
