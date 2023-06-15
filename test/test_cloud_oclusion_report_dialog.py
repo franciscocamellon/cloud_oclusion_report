@@ -16,7 +16,7 @@ import unittest
 
 from qgis.PyQt.QtGui import QDialogButtonBox, QDialog
 
-from cloud_oclusion_report_dialog import CloudOclusionReportDialog
+from cloud_oclusion_report_dialog import CloudOcclusionReportDialog
 
 from utilities import get_qgis_app
 QGIS_APP = get_qgis_app()
@@ -27,7 +27,7 @@ class CloudOclusionReportDialogTest(unittest.TestCase):
 
     def setUp(self):
         """Runs before each test."""
-        self.dialog = CloudOclusionReportDialog(None)
+        self.dialog = CloudOcclusionReportDialog(None)
 
     def tearDown(self):
         """Runs after each test."""
