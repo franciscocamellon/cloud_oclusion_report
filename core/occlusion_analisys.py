@@ -22,7 +22,7 @@
  ***************************************************************************/
 """
 
-import os
+import time
 
 NO_OCCLUSION = 'Não foram identificadas nuvens ou oclusões com área maior ou igual a 0,2 km².'
 OCCLUSION = 'Foram identificadas nuvens ou oclusões com área maior ou igual a 0,2 km².'
@@ -30,18 +30,30 @@ NON_CONFORMING = 'Não Conforme'
 CONFORMING = 'Conforme'
 
 
-def filter_by_occlusion(layer, field, occlusion_param):
+def filter_by_occlusion(layer, field, occlusion_param, progres_bar):
     nonconforming = []
     conforming = []
     analysis_dict = {}
+    counter = 0
+
+    progres_bar.setVisible(True)
 
     for feature in layer.getFeatures():
+        counter += 1
+        progres_bar.setValue(counter)
         group_attribute = feature['texto_edicao']
         occlusion_area = feature[field]
+
         if group_attribute in analysis_dict:
             analysis_dict[group_attribute].append(occlusion_area)
         else:
             analysis_dict[group_attribute] = [occlusion_area]
+
+        time.sleep(0.05)
+
+    progres_bar.setValue(100)
+    progres_bar.setVisible(False)
+    progres_bar.setValue(0)
 
     for key in analysis_dict:
         if max(analysis_dict[key]) >= occlusion_param:
@@ -52,8 +64,9 @@ def filter_by_occlusion(layer, field, occlusion_param):
     return conforming, nonconforming
 
 
-def get_occlusion_result(evaluation_layer, evaluation_field, occlusion_param, block_text):
-    conforming, nonconforming = filter_by_occlusion(evaluation_layer, evaluation_field, occlusion_param)
+def get_occlusion_result(evaluation_layer, evaluation_field, occlusion_param, block_text, progres_bar):
+
+    conforming, nonconforming = filter_by_occlusion(evaluation_layer, evaluation_field, occlusion_param, progres_bar)
 
     if block_text in nonconforming:
         return OCCLUSION, NON_CONFORMING

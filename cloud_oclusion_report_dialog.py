@@ -24,7 +24,6 @@
 
 import os
 
-
 from qgis.PyQt import QtWidgets
 from qgis.PyQt import uic
 from qgis.PyQt.QtCore import QDateTime
@@ -45,6 +44,9 @@ class CloudOcclusionReportDialog(QtWidgets.QDialog, FORM_CLASS):
         """Constructor."""
         super(CloudOcclusionReportDialog, self).__init__(parent)
         self.setupUi(self)
+        self.progress_bar.setVisible(False)
+        self.progress_bar.setValue(0)
+        self.report_number_sp.setMaximum(1000000)
         self.on_evaluate_layer_changed()
         self.report_date_de.setDateTime(QDateTime.currentDateTime())
         self.evaluate_end_date_de.setDateTime(QDateTime.currentDateTime())
@@ -67,7 +69,8 @@ class CloudOcclusionReportDialog(QtWidgets.QDialog, FORM_CLASS):
         analysis_answer, conformity = get_occlusion_result(self.evaluation_layer_cb.currentLayer(),
                                                            self.evaluation_field_cb.currentField(),
                                                            self.occlusion_param_sd.value(),
-                                                           self.block_cb.currentText())
+                                                           self.block_cb.currentText(),
+                                                           self.progress_bar)
 
         input_data = [
             self.om_cb.currentText(),
@@ -78,15 +81,17 @@ class CloudOcclusionReportDialog(QtWidgets.QDialog, FORM_CLASS):
             self.evaluate_end_date_de.text(),
             conformity,
             analysis_answer,
-            '{} {}'.format(self.evaluator_grad_cb.currentText(), self.evaluator_name_le.text()),
-            '{} {}'.format(self.manager_pst_cb.currentText(), self.manager_name_le.text()),
-            self.report_date_de.text()
+            f'{self.evaluator_name_le.text()} - {self.evaluator_grad_cb.currentText()}',
+            f'{self.manager_name_le.text()} - {self.manager_pst_cb.currentText()}',
+            self.report_date_de.text(),
+            self.project_name_le.text(),
+            self.project_product_cb.currentText(),
+            self.project_scale_cb.currentText(),
         ]
 
-        print(input_data)
         return input_data
 
     def on_report_button_clicked(self):
         context = get_html_data(self.get_input_data())
-        message = convert_text_to_pdf(context, self.report_number_sp.text(),
-                                      self.pdf_destination_fw.filePath())
+        convert_text_to_pdf(context, self.report_number_sp.text(),
+                            self.pdf_destination_fw.filePath())

@@ -45,17 +45,17 @@ def get_om_name_and_location(string):
 def get_html_data(evaluate_data):
     om_name, om_location = get_om_name_and_location(evaluate_data[0])
 
-    context = {'product_type': 'Ortoimagem',
+    context = {'product_type': string_to_html_text(evaluate_data[12]),
                'om_name': string_to_html_text(om_name),
                'doc_number': string_to_html_text(evaluate_data[1]),
                'block': string_to_html_text(evaluate_data[2]),
                'work_month': string_to_html_text(evaluate_data[3]),
                'work_year': string_to_html_text(evaluate_data[4]),
-               'map_scale': '1:10.000',
+               'map_scale': string_to_html_text(evaluate_data[13]),
                'src': 'SIRGAS 2000 UTM 24S',
                'finish_project_date': string_to_html_text(evaluate_data[5]),
                'evaluation_result': string_to_html_text(evaluate_data[7]),
-               'project_name': string_to_html_text('Perícia PI/CE'),
+               'project_name': string_to_html_text(evaluate_data[11]),
                'conformity': string_to_html_text(evaluate_data[6]),
                'responsavel_tecnico': string_to_html_text(evaluate_data[9]),
                'avaliador': string_to_html_text(evaluate_data[8]),
@@ -79,3 +79,10 @@ def show_success_message_bar(message):
         msg.setText(message['success'])
 
     msg.exec_()
+
+
+def run_progress_bar(progress_bar, layer):
+    counter = 0
+    for feature in layer.getFeatures():
+        counter += 1
+        progress_bar.setValue(counter)

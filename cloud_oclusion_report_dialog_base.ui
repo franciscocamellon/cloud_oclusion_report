@@ -780,7 +780,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="evaluator_grad_cb_2">
+      <widget class="QComboBox" name="evaluator_grad_cb">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -833,7 +833,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="evaluator_name_le_2">
+      <widget class="QLineEdit" name="evaluator_name_le">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -979,7 +979,7 @@
     </layout>
    </widget>
   </widget>
-  <widget class="QProgressBar" name="progressBar">
+  <widget class="QProgressBar" name="progress_bar">
    <property name="geometry">
     <rect>
      <x>10</x>
