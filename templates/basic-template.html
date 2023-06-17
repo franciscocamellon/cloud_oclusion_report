@@ -3,7 +3,284 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="my-style.css">
+    <!--    <link rel="stylesheet" href="my-style.css">-->
+
+    <style type="text/css">
+        body {
+            display: flex;
+            font-size: 12pt;
+        }
+
+        .container,
+        .container-fluid,
+        .container-sm,
+        .container-md,
+        .container-lg,
+        .container-xl,
+        .container-xxl {
+            width: 100%;
+            padding-right: var(--bs-gutter-x, 12px);
+            padding-left: var(--bs-gutter-x, 12px);
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .wrapper {
+            height: 100%;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        
+        table {
+            caption-side: bottom;
+            border-collapse: collapse; }
+
+        caption {
+            padding-top: 0.95rem;
+            padding-bottom: 0.95rem;
+            color: #98a6ad;
+            text-align: left; }
+
+        th {
+            text-align: inherit;
+            text-align: -webkit-match-parent; }
+
+        thead,
+        tbody,
+        tfoot,
+        tr,
+        td,
+        th {
+            border-color: inherit;
+            border-style: solid;
+            border-width: 0; }
+
+        .table-centered th, .table-centered td {
+            vertical-align: middle !important; }
+        
+        .table-responsive {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch; }
+        
+        @media (max-width: 575.98px) {
+            .table-responsive-sm {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch; } }
+
+        @media (max-width: 767.98px) {
+            .table-responsive-md {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch; } }
+
+        @media (max-width: 991.98px) {
+            .table-responsive-lg {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch; } }
+
+        @media (max-width: 1199.98px) {
+            .table-responsive-xl {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch; } }
+
+        @media (max-width: 1399.98px) {
+            .table-responsive-xxl {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch; } }
+
+        table.main-table {
+            margin-left: auto;
+            margin-right: auto;
+            width: 85%;
+            border-collapse: collapse;
+            border-color: #000000;
+            border: 1px solid #000000;
+            text-align: center;
+        }
+
+        table.main-table td,
+        table.main-table th {
+            border: 1px solid #000000;
+            padding: 3px 4px;
+        }
+
+        .main-table td,
+        .main-table th {
+            border: 1px solid #000000;
+            padding: 4px;
+
+        }
+
+        .main-table th {
+            background-color: #eeeeee;
+            height: 14px;
+        }
+
+        span {
+            color: #000000;
+            font-family: "Times New Roman", serif;
+            font-size: medium;
+        }
+
+        .td-title {
+            height: 48px;
+            width: 300.297px;
+            background-color: #eeeeee;
+        }
+
+        table.inner-table {
+            margin-left: auto;
+            margin-right: auto;
+            height: 50%;
+            width: max-content;
+            border-collapse: collapse;
+            border: 1px solid #000000;
+            text-align: center;
+        }
+
+        .list-group {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            padding-left: 0;
+            margin-bottom: 0;
+            border-radius: 0.25rem; }
+
+        .list-group-numbered {
+            list-style-type: none;
+            counter-reset: section; }
+
+        .list-group-numbered > li::before {
+            content: counters(section, ".") ". ";
+            counter-increment: section; }
+
+        .list-group-item {
+            position: relative;
+            display: block;
+            padding: 0.75rem 1.2rem;
+            color: #474d56;
+            background-color: #fff;
+            border: 1px solid #eef2f7; }
+        .list-group-item:first-child {
+            border-top-left-radius: inherit;
+            border-top-right-radius: inherit; }
+        .list-group-item:last-child {
+            border-bottom-right-radius: inherit;
+            border-bottom-left-radius: inherit; }
+        .list-group-item.disabled, .list-group-item:disabled {
+            color: #919ca7;
+            pointer-events: none;
+            background-color: #f5f7fc; }
+        .list-group-item.active {
+            z-index: 2;
+            color: #fff;
+            background-color: #3688fc;
+            border-color: #3688fc; }
+        .list-group-item + .list-group-item {
+            border-top-width: 0; }
+            .list-group-item + .list-group-item.active {
+            margin-top: -1px;
+            border-top-width: 1px; }
+
+        .mx-3 {
+            margin-right: 1.5rem !important;
+            margin-left: 1.5rem !important;
+        }
+
+        .my-0 {
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+        }
+
+        .my-1 {
+            margin-top: 0.375rem !important;
+            margin-bottom: 0.375rem !important;
+        }
+
+        .my-2 {
+            margin-top: 0.75rem !important;
+            margin-bottom: 0.75rem !important;
+        }
+
+        .my-3 {
+            margin-top: 1.5rem !important;
+            margin-bottom: 1.5rem !important;
+        }
+
+        .my-4 {
+            margin-top: 2.25rem !important;
+            margin-bottom: 2.25rem !important;
+        }
+
+        .my-5 {
+            margin-top: 4.5rem !important;
+            margin-bottom: 4.5rem !important;
+        }
+
+        .my-auto {
+            margin-top: auto !important;
+            margin-bottom: auto !important;
+        }
+
+        .ms-1 {
+            margin-left: 0.5rem !important;
+        }
+
+        .ms-2 {
+            margin-left: 0.75rem !important;
+        }
+
+        .ms-3 {
+            margin-left: 1.5rem !important;
+        }
+
+        .ms-4 {
+            margin-left: 2.25rem !important;
+        }
+
+        .ms-5 {
+            margin-left: 4.5rem !important;
+        }
+
+        .mt-0 {
+            margin-top: 0 !important;
+        }
+
+        .mt-1 {
+            margin-top: 0.375rem !important;
+        }
+
+        .mt-2 {
+            margin-top: 0.75rem !important;
+        }
+
+        .mt-3 {
+            margin-top: 1.5rem !important;
+        }
+
+        .mt-4 {
+            margin-top: 3.5rem !important;
+        }
+
+        .mt-5 {
+            margin-top: 4.5rem !important;
+        }
+
+        .left-align {
+            text-align: left;
+        }
+
+        .text-center {
+            text-align: center !important;
+        }
+
+        .fw-bold {
+            font-weight: 700 !important; }
+    </style>
 </head>
 
 <body>
@@ -29,160 +306,173 @@
                     <strong> {{om_name}} </strong>
                 </span>
             </p>
-            <p class="text-center mt-5">
+            <p class="text-center mb-0 mt-4">
                 <strong>RELATÓRIO DE CONTROLE DE QUALIDADE N° {{doc_number}}/{{work_year}} </strong>
             </p>
         </div>
-        <table class="main-table">
-            <tbody>
-                <tr>
-                    <th class="left-align" colspan="2">
-                        <p class="ms-2 my-1">1. Produto: {{product_type}} - {{block}} </p>
-                    </th>
-                </tr>
-                <tr>
-                    <th class="left-align" colspan="2">
-                        <p class="ms-2 my-1"> 2. Metodologia Utilizada: </p>
-                    </th>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <p class="left-align ms-2 my-3">
-                            A presente ortoimagem foi avaliada utilizando a Metodologia de Controle de Qualidade de
-                            Isumos Matriciais 1° Edição, de 31 de março de 2023 baseada na Especificação Técnica
-                            para Controle de Qualidade de Dados Geoespaciais (ET-CQDG), 1° Edição (2016).
-                        </p>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="left-align">
-                        <p class="ms-2 my-1"> 3. Período de Trabalho - Mês: {{work_month}}</p>
-                    </th>
-                    <th class="left-align"> Ano: </strong>{{work_year}}
-                    </th>
-                </tr>
-                <tr>
-                    <th class="left-align" colspan="2">
-                        <p class="ms-2 my-1"> 4. Identificação do Produto:</p>
-                    </th>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <table class="inner-table my-3 mx-3">
-                            <tbody>
-                                <tr>
-                                    <th>Projeto</th>
-                                    <td class="left-align">{{project_name}}</td>
-                                </tr>
-                                <tr>
-                                    <th>Bloco</th>
-                                    <td class="left-align">{{block}}</td>
-                                </tr>
-                                <tr>
-                                    <th>Escala</th>
-                                    <td class="left-align">{{map_scale}}</td>
-                                </tr>
-                                <tr>
-                                    <th>Sistema de Referência </th>
-                                    <td class="left-align"> {{src}} </td>
-                                </tr>
-                                <tr>
-                                    <th> Tipo de Produto </th>
-                                    <td class="left-align"> {{product_type}} </td>
-                                </tr>
-                                <tr>
-                                    <th> Data de Finalização </th>
-                                    <td class="left-align"> {{finish_project_date}} </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="left-align" colspan="2">
-                        <p class="ms-2 my-1"> 5. Avaliação de Oclusões: {{conformity}}</p>
-                    </th>
-                </tr>
-                <tr>
-                    <td class="left-align" colspan="2">
-                        <p class="left-align ms-2 my-3">
-                            Medida de área máxima de oclusão: <br>{{evaluation_result}}
-                        </p>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="left-align" colspan="2">
-                        <p class="ms-2 my-1">6. Sumário: </p>
-                    </th>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <table class="inner-table left-align my-3">
-                            <thead>
-                                <tr>
-                                    <th>Elemento</th>
-                                    <th>Medida</th>
-                                    <th>Procedimento</th>
-                                    <th>Resultado</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td> Oclusão </td>
-                                    <td>-</td>
-                                    <td> Direto interno <br> Inspeção completa </td>
-                                    <td> Conforme </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="left-align" colspan="2">
-                        <p class="ms-2 my-1"> 7. Parecer Final: </p>
-                    </th>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <p class="left-align ms-2 my-3">
-                            De acordo com as medidas estabelecidas, o produto Ortoimagem referente ao {{block}} foi
-                            considerado <u><strong>{{conformity}}</strong></u>.
-                        </p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="wrapper">
+            <table class="main-table">
+                <tbody>
+                    <tr>
+                        <th class="left-align" colspan="2">
+                            <p class="ms-1 my-1">1. Produto: {{product_type}} - {{block}} </p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th class="left-align" colspan="2">
+                            <p class="ms-1 my-1"> 2. Metodologia Utilizada: </p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p class="left-align ms-2 my-2">
+                                A presente ortoimagem foi avaliada utilizando a Metodologia de Controle de Qualidade de
+                                Isumos Matriciais 1° Edição, de 31 de março de 2023 baseada na Especificação Técnica
+                                para Controle de Qualidade de Dados Geoespaciais (ET-CQDG), 1° Edição (2016).
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="left-align">
+                            <p class="ms-1 my-1"> 3. Período de Trabalho</p>
+                        </th>
+                        <th class="text-center"> Mês: {{work_month}} - Ano: </strong>{{work_year}}
+                        </th>
+                    </tr>
+                    <tr>
+                        <th class="left-align" colspan="2">
+                            <p class="ms-1 my-1"> 4. Identificação do Produto:</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <ul class="left-align">
+                                <li><span class="fw-bold">Projeto: </span>{{project_name}}
+                                <li><span class="fw-bold">Tipo de Produto: </span>{{product_type}}
+                                <li><span class="fw-bold">Escala: </span>{{map_scale}}
+                                <li><span class="fw-bold">Sistema de Referência: </span>{{src}}
+                                <li><span class="fw-bold">Bloco: </span>{{block}}
+                                <li><span class="fw-bold">Data de Finalização: </span>{{finish_project_date}}
+                            </ul>
+                            <!-- <table class="table my-2 mx-3">
+                                <tbody>
+                                    <tr>
+                                        <th>Projeto</th>
+                                        <td class="left-align">{{project_name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Bloco</th>
+                                        <td class="left-align">{{block}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Escala</th>
+                                        <td class="left-align">{{map_scale}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Sistema de Referência </th>
+                                        <td class="left-align"> {{src}} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Tipo de Produto </th>
+                                        <td class="left-align"> {{product_type}} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Data de Finalização </th>
+                                        <td class="left-align"> {{finish_project_date}} </td>
+                                    </tr>
+                                </tbody>
+                            </table> -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="left-align" colspan="2">
+                            <p class="ms-1 my-1"> 5. Avaliação de Oclusões: {{conformity}}</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td class="left-align" colspan="2">
+                            <p class="left-align ms-2 my-2">
+                                Medida de área máxima de oclusão: {{evaluation_parameters}}
+                            </p>
+                            <p class="left-align ms-3 my-2">
+                                {{evaluation_result}}
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="left-align" colspan="2">
+                            <p class="ms-1 my-1">6. Sumário: </p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <ul class="left-align">
+                                <li><span class="fw-bold">Elemento: </span>Oclusão
+                                <li><span class="fw-bold">Medida: </span>-
+                                <li><span class="fw-bold">Procedimento: </span>Direto interno - Inspeção completa
+                                <li><span class="fw-bold">Resultado: </span>Conforme
+                            </ul>
+                            <!-- <table class="table table-centered my-2 mx-3">
+                                <thead>
+                                    <tr>
+                                        <th>Elemento</th>
+                                        <th>Medida</th>
+                                        <th>Procedimento</th>
+                                        <th>Resultado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td> Oclusão </td>
+                                        <td>-</td>
+                                        <td> Direto interno <br> Inspeção completa </td>
+                                        <td> Conforme </td>
+                                    </tr>
+                                </tbody>
+                            </table> -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="left-align" colspan="2">
+                            <p class="ms-1 my-1"> 7. Parecer Final: </p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p class="left-align ms-2 my-2">
+                                De acordo com as medidas estabelecidas, o produto Ortoimagem referente ao {{block}} foi
+                                considerado <u><strong>{{conformity}}</strong></u>.
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
-        <p>&nbsp;</p>
+            <p class="text-center my-0 mt-4">
+                <span>{{local_and_time}}.</span>
+            </p>
 
-        <p class="western" align="center">
-            <span>{{local_and_time}}.</span>
-        </p>
 
-        <p><br /><br /></p>
+            <p class="text-center my-0 mt-4">
+                <span>______________________________________</span>
+            </p>
+            <p class="text-center my-0">
+                <span><strong>{{evaluator}}</strong></span>
+            </p>
+            <p class="text-center my-0">
+                <span>Avaliador</span>
+            </p>
 
-        <p class="text-center my-0">
-            <span>______________________________________</span>
-        </p>
-        <p class="text-center my-0">
-            <span><strong>{{avaliador}}</strong></span>
-        </p>
-        <p class="text-center my-0">
-            <span>Avaliador</span>
-        </p>
-
-        <p class="western" align="center">&nbsp;</p>
-        <p class="western" align="center">&nbsp;</p>
-
-        <p class="text-center my-0">
-            <span>______________________________________</span>
-        </p>
-        <p class="text-center my-0">
-            <span><strong>{{responsavel_tecnico}}</strong></span>
-        </p>
-        <p class="text-center my-0">
-            <span>Responsável Técnico</span>
-        </p>
+            <p class="text-center my-0 mt-4">
+                <span>______________________________________</span>
+            </p>
+            <p class="text-center my-0">
+                <span><strong>{{technical_manager}}</strong></span>
+            </p>
+            <p class="text-center my-0">
+                <span>Responsável Técnico</span>
+            </p>
+        </div>
     </div>
 </body>
 
