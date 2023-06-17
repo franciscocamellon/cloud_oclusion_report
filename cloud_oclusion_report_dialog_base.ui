@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>392</width>
-    <height>600</height>
+    <height>602</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>10</y>
+     <y>170</y>
      <width>371</width>
      <height>201</height>
     </rect>
@@ -317,7 +317,7 @@
      <rect>
       <x>10</x>
       <y>55</y>
-      <width>349</width>
+      <width>351</width>
       <height>29</height>
      </rect>
     </property>
@@ -460,7 +460,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>220</y>
+     <y>380</y>
      <width>371</width>
      <height>151</height>
     </rect>
@@ -649,23 +649,206 @@
     </layout>
    </widget>
   </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>560</y>
+     <width>201</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QPushButton" name="report_bt">
+      <property name="text">
+       <string>Gerar relatório</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="cancel_bt">
+      <property name="text">
+       <string>Cancel</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
   <widget class="QGroupBox" name="groupBox_3">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>460</y>
+     <y>10</y>
      <width>371</width>
-     <height>71</height>
+     <height>151</height>
     </rect>
    </property>
    <property name="title">
-    <string>Responsável técnico</string>
+    <string>Projeto</string>
    </property>
+   <widget class="QWidget" name="horizontalLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>351</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="label_12">
+       <property name="text">
+        <string>Nome</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="project_name_le"/>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_10">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>15</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_11">
+       <property name="text">
+        <string>Produto</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="project_product_cb">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <item>
+        <property name="text">
+         <string>Ortofoto</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Ortoimagem</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Ponto de controle</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Modelo Digital do Terreno</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>351</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_13">
+     <item>
+      <widget class="QLabel" name="label_16">
+       <property name="text">
+        <string>Avaliador</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="evaluator_grad_cb">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <item>
+        <property name="text">
+         <string>STen</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1° Sgt</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2° Sgt</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>3° Sgt</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_12">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>15</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_17">
+       <property name="text">
+        <string>Nome</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="evaluator_name_le">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
    <widget class="QWidget" name="horizontalLayoutWidget_5">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>30</y>
+      <y>110</y>
       <width>351</width>
       <height>31</height>
      </rect>
@@ -674,7 +857,7 @@
      <item>
       <widget class="QLabel" name="label_9">
        <property name="text">
-        <string>Posto</string>
+        <string>Responsável técnico</string>
        </property>
       </widget>
      </item>
@@ -707,7 +890,7 @@
        </property>
        <property name="sizeHint" stdset="0">
         <size>
-         <width>15</width>
+         <width>12</width>
          <height>20</height>
         </size>
        </property>
@@ -725,127 +908,89 @@
      </item>
     </layout>
    </widget>
-  </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>550</y>
-     <width>291</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
-     <widget class="QPushButton" name="evaluate_bt">
-      <property name="text">
-       <string>Analisar feições</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="report_bt">
-      <property name="text">
-       <string>Gerar relatório</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="cancel_bt">
-      <property name="text">
-       <string>Cancel</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QGroupBox" name="groupBox_4">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>380</y>
-     <width>371</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="title">
-    <string>Avaliador</string>
-   </property>
-   <widget class="QWidget" name="horizontalLayoutWidget_2">
+   <widget class="QWidget" name="layoutWidget_6">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>30</y>
+      <y>50</y>
       <width>351</width>
-      <height>31</height>
+      <height>29</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <layout class="QHBoxLayout" name="horizontalLayout_14">
      <item>
-      <widget class="QLabel" name="label_11">
+      <widget class="QLabel" name="label_18">
        <property name="text">
-        <string>Graduação</string>
+        <string>Escala</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="evaluator_grad_cb">
+      <widget class="QComboBox" name="project_scale_cb">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
        <item>
         <property name="text">
-         <string>STen</string>
+         <string>1:10.000</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>1° Sgt</string>
+         <string>1:25.000</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>2° Sgt</string>
+         <string>1:50.000</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>3° Sgt</string>
+         <string>1:100.000</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1:250.000</string>
         </property>
        </item>
       </widget>
      </item>
      <item>
-      <spacer name="horizontalSpacer_10">
+      <spacer name="horizontalSpacer_5">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
        <property name="sizeType">
-        <enum>QSizePolicy::Fixed</enum>
+        <enum>QSizePolicy::Expanding</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
-         <width>15</width>
-         <height>20</height>
+         <width>25</width>
+         <height>25</height>
         </size>
        </property>
       </spacer>
      </item>
-     <item>
-      <widget class="QLabel" name="label_12">
-       <property name="text">
-        <string>Nome</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="evaluator_name_le"/>
-     </item>
     </layout>
    </widget>
+  </widget>
+  <widget class="QProgressBar" name="progress_bar">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>540</y>
+     <width>371</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="value">
+    <number>24</number>
+   </property>
   </widget>
  </widget>
  <customwidgets>
