@@ -28,11 +28,11 @@ from qgis.PyQt.QtCore import Qt
 from qgis.PyQt.QtWidgets import QMessageBox, QHeaderView, QComboBox, QLineEdit
 
 OM_MAP = {
-    "1º CGEO": ("1º CENTRO DE GEOINFORMAÇÃO", "Porto Alegre - RS,"),
-    "2º CGEO": ("2º CENTRO DE GEOINFORMAÇÃO", "Brasília - DF,"),
-    "3º CGEO": ("3º CENTRO DE GEOINFORMAÇÃO", "Olinda - PE,"),
-    "4º CGEO": ("4º CENTRO DE GEOINFORMAÇÃO", "Manaus - AM,"),
-    "5º CGEO": ("5º CENTRO DE GEOINFORMAÇÃO", "Rio de Janeiro - RJ,")
+    '1º CGEO': ('1º CENTRO DE GEOINFORMAÇÃO', 'Porto Alegre - RS,'),
+    '2º CGEO': ('2º CENTRO DE GEOINFORMAÇÃO', 'Brasília - DF,'),
+    '3º CGEO': ('3º CENTRO DE GEOINFORMAÇÃO', 'Olinda - PE,'),
+    '4º CGEO': ('4º CENTRO DE GEOINFORMAÇÃO', 'Manaus - AM,'),
+    '5º CGEO': ('5º CENTRO DE GEOINFORMAÇÃO', 'Rio de Janeiro - RJ,')
 }
 
 
@@ -43,11 +43,11 @@ def get_formatted_date(string_date):
 
 
 def string_to_html_text(html_string):
-    return html.escape(html_string, quote=False).encode("utf-8", "xmlcharrefreplace").decode("utf-8")
+    return html.escape(html_string, quote=False).encode('utf-8', 'xmlcharrefreplace').decode('utf-8')
 
 
 def get_om_name_and_location(string):
-    return OM_MAP.get(string, ("error", None))
+    return OM_MAP.get(string, ('error', None))
 
 
 def get_html_data(evaluate_data):
@@ -76,11 +76,11 @@ def get_html_data(evaluate_data):
 
 def show_success_message_bar(message):
     msg = QMessageBox()
-    msg.setWindowTitle("Cloud Occlusion Report")
+    msg.setWindowTitle('Cloud Occlusion Report')
 
     if 'error' in message:
         msg.setIcon(QMessageBox.Warning)
-        msg.setText("An error occur!")
+        msg.setText('An error occur!')
         msg.setInformativeText(message['error'])
 
         msg.setStandardButtons(QMessageBox.Ok)

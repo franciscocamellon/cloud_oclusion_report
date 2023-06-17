@@ -48,7 +48,7 @@ def get_jinja_context_text(context_dict):
 def convert_text_to_pdf(context_dict, file_name, pdf_destination):
     file_name_path = os.path.join(pdf_destination, get_report_name(file_name))
     try:
-        if os.path.exists(file_name_path):
+        if not os.path.exists(file_name_path):
             pdfkit.from_string(get_jinja_context_text(context_dict), file_name_path,
                                configuration=PDFKIT_CONFIG, css=CSS_FILE, options={'enable-local-file-access': ''})
 
