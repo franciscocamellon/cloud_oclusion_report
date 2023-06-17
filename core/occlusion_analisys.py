@@ -24,8 +24,8 @@
 
 import time
 
-NO_OCCLUSION = 'Não foram identificadas nuvens ou oclusões com área maior ou igual a 0,2 km².'
-OCCLUSION = 'Foram identificadas nuvens ou oclusões com área maior ou igual a 0,2 km².'
+NO_OCCLUSION = 'Não foram identificadas nuvens ou oclusões com área maior ou igual ao máximo permitido.'
+OCCLUSION = 'Foram identificadas nuvens ou oclusões com área maior ou igual ao máximo permitido.'
 NON_CONFORMING = 'Não Conforme'
 CONFORMING = 'Conforme'
 

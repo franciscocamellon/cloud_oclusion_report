@@ -29,16 +29,16 @@ from jinja2 import Environment, PackageLoader, select_autoescape
 from .util import show_success_message_bar
 
 CSS_FILE = os.path.join(os.path.dirname(__file__), 'templates', 'my-style.css')
-PDFKIT_CONFIG = pdfkit.configuration(wkhtmltopdf="C:/Program Files (x86)/wkhtmltopdf/bin/wkhtmltopdf.exe")
+PDFKIT_CONFIG = pdfkit.configuration(wkhtmltopdf='C:/Program Files (x86)/wkhtmltopdf/bin/wkhtmltopdf.exe')
 
 
 def get_report_name(report_number):
-    today_date = datetime.today().strftime("%d %b %Y")
-    return f"Relatorio Tecnico Nr {report_number} - {today_date}.pdf"
+    today_date = datetime.today().strftime('%d %b %Y')
+    return f'Relatório Técnico Nr {report_number} - {today_date}.pdf'
 
 
 def get_jinja_context_text(context_dict):
-    jinja_environment = Environment(loader=PackageLoader("cloud_oclusion_report", 'templates'),
+    jinja_environment = Environment(loader=PackageLoader('cloud_oclusion_report', 'templates'),
                                     autoescape=select_autoescape())
     html_template = jinja_environment.get_template('basic-template.html')
 
@@ -46,12 +46,16 @@ def get_jinja_context_text(context_dict):
 
 
 def convert_text_to_pdf(context_dict, file_name, pdf_destination):
+    file_name_path = os.path.join(pdf_destination, get_report_name(file_name))
     try:
-        file_name_path = os.path.join(pdf_destination, get_report_name(file_name))
-        pdfkit.from_string(get_jinja_context_text(context_dict), file_name_path,
-                           configuration=PDFKIT_CONFIG, css=CSS_FILE)
+        if os.path.exists(file_name_path):
+            pdfkit.from_string(get_jinja_context_text(context_dict), file_name_path,
+                               configuration=PDFKIT_CONFIG, css=CSS_FILE, options={'enable-local-file-access': ''})
 
-        show_success_message_bar({'success': f"{get_report_name(file_name)} created successfully at {pdf_destination}."})
+            show_success_message_bar({'success': f'{get_report_name(file_name)} created successfully at {pdf_destination}.'})
+
+        else:
+            show_success_message_bar({'error': f'{get_report_name(file_name)} already exists!'})
 
     except Exception as e:
-        show_success_message_bar({'error': f"Error creating PDF: {str(e)}"})
+        show_success_message_bar({'error': f'Error creating PDF: {str(e)}'})

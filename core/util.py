@@ -22,6 +22,8 @@
  ***************************************************************************/
 """
 import html
+import locale
+from datetime import datetime
 from qgis.PyQt.QtCore import Qt
 from qgis.PyQt.QtWidgets import QMessageBox, QHeaderView, QComboBox, QLineEdit
 
@@ -34,6 +36,12 @@ OM_MAP = {
 }
 
 
+def get_formatted_date(string_date):
+    locale.setlocale(locale.LC_TIME, 'pt_BR.utf8')
+    unformatted_date = datetime.strptime(string_date, '%d/%m/%Y')
+    return unformatted_date.strftime('%d de %B de %Y')
+
+
 def string_to_html_text(html_string):
     return html.escape(html_string, quote=False).encode("utf-8", "xmlcharrefreplace").decode("utf-8")
 
@@ -44,6 +52,7 @@ def get_om_name_and_location(string):
 
 def get_html_data(evaluate_data):
     om_name, om_location = get_om_name_and_location(evaluate_data[0])
+    formatted_date = get_formatted_date(evaluate_data[10])
 
     context = {'product_type': string_to_html_text(evaluate_data[12]),
                'om_name': string_to_html_text(om_name),
@@ -54,12 +63,13 @@ def get_html_data(evaluate_data):
                'map_scale': string_to_html_text(evaluate_data[13]),
                'src': 'SIRGAS 2000 UTM 24S',
                'finish_project_date': string_to_html_text(evaluate_data[5]),
+               'evaluation_parameters': string_to_html_text(evaluate_data[14]),
                'evaluation_result': string_to_html_text(evaluate_data[7]),
                'project_name': string_to_html_text(evaluate_data[11]),
                'conformity': string_to_html_text(evaluate_data[6]),
-               'responsavel_tecnico': string_to_html_text(evaluate_data[9]),
-               'avaliador': string_to_html_text(evaluate_data[8]),
-               'local_and_time': string_to_html_text(om_location) + string_to_html_text(evaluate_data[10])
+               'technical_manager': string_to_html_text(evaluate_data[9]),
+               'evaluator': string_to_html_text(evaluate_data[8]),
+               'local_and_time': f'{string_to_html_text(om_location)} {string_to_html_text(formatted_date)}'
                }
     return context
 

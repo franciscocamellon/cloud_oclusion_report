@@ -51,7 +51,6 @@ class CloudOcclusionReportDialog(QtWidgets.QDialog, FORM_CLASS):
         self.report_date_de.setDateTime(QDateTime.currentDateTime())
         self.evaluate_end_date_de.setDateTime(QDateTime.currentDateTime())
         self.evaluation_layer_cb.setFilters(QgsMapLayerProxyModel.PolygonLayer)
-        # self.evaluate_bt.clicked.connect(self.on_evaluate_button_clicked)
         self.report_bt.clicked.connect(self.on_report_button_clicked)
         self.cancel_bt.clicked.connect(self.close)
         self.evaluation_layer_cb.layerChanged.connect(self.on_evaluate_layer_changed)
@@ -87,6 +86,7 @@ class CloudOcclusionReportDialog(QtWidgets.QDialog, FORM_CLASS):
             self.project_name_le.text(),
             self.project_product_cb.currentText(),
             self.project_scale_cb.currentText(),
+            f'{self.occlusion_param_sd.value()} {self.occlusion_param_unit_cb.currentText()}'
         ]
 
         return input_data
